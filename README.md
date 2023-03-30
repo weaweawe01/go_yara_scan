@@ -61,37 +61,33 @@ Usage of ./go_yara_scan:
 
 $ Scan File 
 $ ./go_yara_scan --file=/etc/passwd
-db load succeed: 9912
 chan string count 1
 Scan completed.
-costTime 1.516261496s
+costTime 100ms
 
 $ ./go_yara_scan --dir=/www
-db load succeed: 9912
 chan string count 2
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/dd/nmap
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/nmap
 Scan completed.
-costTime 14.905588934s
+costTime 300ms
 
 
 The default limit is 10% of the overall CPU if you want to open the CPU. Use the following:
 $ ./go_yara_scan --dir=../test_file --cpu=80
-db load succeed: 9912
 chan string count 2
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/dd/nmap
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/nmap
 Scan completed.
-costTime 6.38549549s
+costTime 200ms
 
 The default scan directory level is 5 times. If you want to scan multiple layers. As follows:
 $ ./go_yara_scan --dir=../test_file --cpu=80  --scan_recu=10
-db load succeed: 9912
 chan string count 2
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/dd/nmap
 209 YARA.Unix_Packer_UpxDetail.UNOFFICIAL Virus(es) detected ../test_file/nmap
 Scan completed.
-costTime 6.38549549s
+costTime 300ms
 ```
 
 
@@ -100,4 +96,5 @@ costTime 6.38549549s
 
 ## Reference
 [hillu/go-yara](https://github.com/hillu/go-yara)
+
 
